@@ -1,0 +1,2933 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0-modified | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* make sure to set some focus styles for accessibility */
+:focus {
+    outline: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input[type=search] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    resize: vertical;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    max-width: 100%;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/**
+ * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-size: 100%; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+
+img {
+    border: 0; /* 1 */
+    -ms-interpolation-mode: bicubic; /* 2 */
+}
+
+/**
+ * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+
+figure {
+    margin: 0;
+}
+
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+
+form {
+    margin: 0;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct color not being inherited in IE 6/7/8/9.
+ * 2. Correct text not wrapping in Firefox 3.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0;
+    white-space: normal; /* 2 */
+    *margin-left: -7px; /* 3 */
+}
+
+/**
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improve appearance and consistency in all browsers.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%; /* 1 */
+    margin: 0; /* 2 */
+    vertical-align: baseline; /* 3 */
+    *vertical-align: middle; /* 3 */
+}
+
+/**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+    *overflow: visible;  /* 4 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+    *height: 13px; /* 3 */
+    *width: 13px; /* 3 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 3+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* inter-300 - latin_cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  src: local(''),
+       url('../fonts/inter-v11-latin_cyrillic-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/inter-v11-latin_cyrillic-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* inter-regular - latin_cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/inter-v11-latin_cyrillic-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/inter-v11-latin_cyrillic-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* inter-500 - latin_cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+       url('../fonts/inter-v11-latin_cyrillic-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/inter-v11-latin_cyrillic-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* inter-600 - latin_cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: local(''),
+       url('../fonts/inter-v11-latin_cyrillic-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/inter-v11-latin_cyrillic-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* inter-700 - latin_cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('../fonts/inter-v11-latin_cyrillic-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/inter-v11-latin_cyrillic-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* inter-800 - latin_cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  src: local(''),
+       url('../fonts/inter-v11-latin_cyrillic-800.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/inter-v11-latin_cyrillic-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+.a {
+    font-family: inherit;
+}
+
+.container {
+    max-width:1230px;
+    max-height:88px;
+}
+
+.header {
+    padding-left: 343px;
+}
+
+/* GEFEST */
+.capsgefest {
+    position: absolute;
+    width: 197px;
+    height: 24px;
+    left: 343px;
+    top: 43px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 24px;
+    color: #556686;
+
+}
+
+/* Производство и продажа металлопроката    */
+.sale {
+position: absolute;
+width: 217px;
+height: 44px;
+left: 551px;
+top: 32px;
+
+font-family:'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+color: #000;
+}
+
+/* У вас уже есть поставщик */
+.postavshik {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    font-family: 'Inter';
+    position: absolute;
+    width: 246px;
+    height: 48px;
+    left: 968px;
+    top: 32px;
+    color: white;
+    background-color: #2D72CD;
+    border: none;
+    border-radius: 5px;
+}
+
+.postavshik:hover {
+    box-shadow: 0 0 12px rgb(27, 11, 114);
+    -moz-box-shadow: 0 0 12px rgb(27, 11, 114);
+    -o-box-shadow: 0 0 12px rgb(27, 11, 114);
+    -ms-box-shadow: 0 0 12px rgb(27, 11, 114);
+    -webkit-box-shadow: 0 0 12px rgb(27, 11, 114)    ;
+}
+
+/* +7 495 444 4444 */
+.phone {
+    position: absolute;
+    width: 222px;
+    height: 27px;
+    left: 1358px;
+    top: 32px;
+    color: #000;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight:600;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+.phoneline {
+    position: absolute;
+    width: 208px;
+    height: 0px;
+    left: 1368px;
+    top: 83px;
+    border: 1px dashed #5284F7;
+
+}
+
+.zvonok {
+    position: absolute;
+    width: 210px;
+    height: 19px;
+    left: 1366px;
+    top: 63px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #5284F7;
+    
+}
+
+/* Иконка рядом с номером телефна */
+.icon {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 1342px;
+    top: 64px;
+}
+
+.body1 {
+    position: absolute;
+    margin-top: 32px;
+    width: 1920px;
+    height: 834px;
+    left: 0px;
+    top: 99px;
+    overflow: hidden;
+    
+}
+
+.line1 {
+    position: absolute;
+    width: 1920px;
+    height: 0px;
+    top: 101px;
+    border: 1px solid #AEB6BB;
+    transform: rotate(180deg);
+}
+
+.line2A {
+    position: absolute;
+    width: 1920px;
+    height: 0px;
+    top: 933px;
+    border: 1px solid #AEB6BB;
+    transform: rotate(180deg);
+}
+
+.text1 {
+    position: absolute;
+    width: 634px;
+    height: 222px;
+    left: 344px;
+    top: 170px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 37px;
+    line-height: 56px;
+    color: #213252;
+}
+
+.text2 {
+    position: absolute;
+    width: 504px;
+    height: 72px;
+    left: 344px;
+    top: 433px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 36px;
+    color: #213252;
+}
+
+/* Получить прайс с персональными ценами */
+.text3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    position: absolute;
+    width: 400px;
+    height: 69px;
+    left: 344px;
+    top: 578px;
+    background: #2D72CD;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.text3:hover {
+    box-shadow: 0 0 12px rgb(27, 11, 114);
+    -moz-box-shadow: 0 0 12px rgb(27, 11, 114);
+    -o-box-shadow: 0 0 12px rgb(27, 11, 114);
+    -ms-box-shadow: 0 0 12px rgb(27, 11, 114);
+    -webkit-box-shadow: 0 0 12px rgb(27, 11, 114)    ;
+}
+
+
+.imgcontainer {
+    position: absolute;
+    width: 1285px;
+    height: 786px;
+    left: 867px;
+    top: 24px;
+    }
+
+
+
+.try1 {
+    box-sizing: border-box;
+    position: absolute;
+
+}
+
+
+
+
+.body2 {
+    margin-top: 32px;
+    position: absolute;
+    width: 1920px;
+    height: 1233px;
+    left: 0px;
+    top: 933px;
+
+}
+
+.text5 {
+    position: absolute;
+    width: 688px;
+    height: 104px;
+    left: 344px;
+    top: 106px;   
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 52px;    
+    color: #213252;}
+
+.text6 {
+    position: absolute;
+    width: 830px;
+    height: 36px;
+    left: 344px;
+    top: 220px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;}
+
+.text7 {
+    position: absolute;
+    width: 827px;
+    height: 36px;
+    left: 344px;
+    top: 312px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: #213252;}
+
+.cube1 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 206px;
+    height: 134px;
+    left: 344px;
+    top: 381px;
+    background: #EDF1F4;
+    border: 1px solid #AEB6BB;;
+}
+
+.shtrips {
+    position: absolute;
+    width: 205px;
+    height: 40px;
+    left: 0px;
+    top: 74px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    Color: #213252;}
+
+.idk {   
+    position: absolute;
+    width: 38px;
+    height: 32px;
+    left: 83px;
+    top: 23px;
+}
+
+.cube2 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 206px;
+    height: 134px;
+    left: 549px;
+    top: 381px;
+    border: 1px solid #D3DFE7;
+}
+
+.setka {
+    position: absolute;
+    width: 205px;
+    height: 20px;
+    left: 0px;
+    top: 74px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #606774;
+}
+
+.imgsetka {
+    position: absolute;
+    left: 40.98%;
+    right: 40.49%;
+    top: 16.54%;
+    bottom: 57.89%;
+    /* background: #606774; */
+}
+
+.cube3 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 207px;
+    height: 134px;
+    left: 754px;
+    top: 381px;
+    border: 1px solid #D3DFE7;
+}
+
+/* Профиль оцинкованный */
+.profil {
+    position: absolute;
+    width: 205px;
+    height: 40px;
+    left: 0px;
+    top: 74px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #606774;
+}
+
+.imgprofil {
+    position: absolute;
+    left: 40%;
+    right: 40%;
+    top: 16.42%;
+    bottom: 57.46%;
+    /* background: #606774; */
+}
+
+.cube4 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 207px;
+    height: 134px;
+    left: 960px;
+    top: 381px;
+    border: 1px solid #D3DFE7;
+}
+
+/* Профнастил */
+.pfornastil {
+    position: absolute;
+    width: 205px;
+    height: 20px;
+    left: 0px;
+    top: 74px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #606774;
+}
+
+.imgprofnastil {
+    position: absolute;
+    left: 38.54%;
+    right: 38.05%;
+    top: 16.42%;
+    bottom: 58.21%;
+    /* background: #606774; */
+}
+
+.cube5 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 206px;
+    height: 134px;
+    left: 1166px;
+    top: 381px;
+    border: 1px solid #D3DFE7;
+}
+
+.metalloprokat {
+    position: absolute;
+    width: 205px;
+    height: 40px;
+    left: 0px;
+    top: 74px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #606774;
+}
+
+.imgmetalloprokat {
+    position: absolute;
+    left: 41.46%;
+    right: 41.95%;
+    top: 16.54%;
+    bottom: 57.89%;
+    /* background: #606774; */
+    }
+
+.cube6 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 205px;
+    height: 134px;
+    left: 1371px;
+    top: 381px;
+    border: 1px solid #D3DFE7;}
+
+.nazakaz {
+    position: absolute;
+    width: 205px;
+    height: 40px;
+    left: 0px;
+    top: 74px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #606774;
+}
+
+.imgnazakaz {
+    position: absolute;
+    left: 41.95%;
+    right: 41.46%;
+    top: 16.54%;
+    bottom: 57.89%;
+    /* background: #606774; */
+}
+
+.cube7 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 1232px;
+    height: 591px;
+    left: 344px;
+    top: 514px;
+    border: 1px solid #AEB6BB;
+}
+
+.uznatstoimost {
+    font-family: 'Inter';
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    position: absolute;
+    width: 246px;
+    height: 48px;
+    left: 1028px;
+    top: 969px;
+    background: #2D72CD;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+.uznatstoimost:hover {
+    box-shadow: 0 0 12px rgb(27, 11, 114);
+    -moz-box-shadow: 0 0 12px rgb(27, 11, 114);
+    -o-box-shadow: 0 0 12px rgb(27, 11, 114);
+    -ms-box-shadow: 0 0 12px rgb(27, 11, 114);
+    -webkit-box-shadow: 0 0 12px rgb(27, 11, 114)    ;
+}
+
+.uznat {
+    width: 142px;
+    height: 19px;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.cube8 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 617px;
+    height: 591px;
+    left: 344px;
+    top: 514px;
+    border: 1px solid #AEB6BB;
+}
+
+.Rectangle8 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 617px;
+    height: 591px;
+    left: 344px;
+    top: 514px;
+    background: url(image.png);
+    border: 1px solid #AEB6BB;
+}
+
+/* Штрипс, лента оцинкованная */
+
+.text9 {
+    position: absolute;
+    width: 264px;
+    height: 36px;
+    left: 1024px;
+    top: 622px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 36px;
+    color: #213252;
+}
+
+.text10 {
+    position: absolute;
+    width: 279px;
+    height: 84px;
+    left: 1024px;
+    top: 676px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #213252;
+}
+
+.backgroundcody3 {
+    position: absolute;
+    width: 1920px;
+    height: 681px;
+    left: 0px;
+    top: 2165px;
+    background: #1A2C41;
+}
+
+.humanimg {
+    position: absolute;
+    width: 632px;
+    height: 732px;
+    left: 947px;
+    top: 2113px;
+}
+
+.text11 {
+    position: absolute;
+    width: 688px;
+    height: 104px;
+    left: 344px;
+    top: 2241px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 52px;
+    color: #FFFFFF;
+}
+
+.emailbox {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    position: absolute;
+    width: 298px;
+    height: 57px;
+    left: 344px;
+    top: 2419px;
+
+    background: #FFFFFF;
+    border: 1px solid #CDD6DB;
+    border-radius: 4px;
+}
+
+.emailboxtext {
+    width: 267px;
+    height: 28px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #65677C;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    outline: none;
+    border: none;
+}
+
+.textemailbox {
+    position: absolute;
+    width: 261px;
+    height: 28px;
+    left: 344px;
+    top: 2380px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+
+.typesalemagazine {
+    position: absolute;
+    width: 291px;
+    height: 28px;
+    left: 656px;
+    top: 2380px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+
+.typemazine {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    position: absolute;
+    width: 296px;
+    height: 57px;
+    left: 656px;
+    top: 2419px;
+    background: #FFFFFF;
+    border: 1px solid #CDD6DB;
+    border-radius: 4px;
+}
+
+.texttypemagazine {
+    width: 225px;
+    height: 28px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #65677C;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.Polygon1 {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 262px;
+    top: 20px;
+    /* background: #5C6069; */
+    
+}
+
+.nameboxtext {
+    position: absolute;
+    width: 184px;
+    height: 28px;
+    left: 344px;
+    top: 2500px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+
+.namebox {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    position: absolute;
+    width: 298px;
+    height: 57px;
+    left: 344px;
+    top: 2539px;
+
+    background: #FFFFFF;
+    border: 1px solid #CDD6DB;
+    border-radius: 4px;
+}
+
+.nameinbox {
+    width: 268px;
+    height: 28px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #65677C;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    outline: none;
+    border: none;
+}
+
+.nubmerphone {
+    position: absolute;
+    width: 136px;
+    height: 28px;
+    left: 656px;
+    top: 2500px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+
+.numberphonebox {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    position: absolute;
+    width: 296px;
+    height: 57px;
+    left: 656px;
+    top: 2539px;
+    background: #FFFFFF;
+    border: 1px solid #CDD6DB;
+    border-radius: 4px;
+}
+
+.numberphone1 {
+    width: 198px;
+    height: 28px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #65677C;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.callingafter {
+    position: absolute;
+    width: 376px;
+    height: 28px;
+    left: 344px;
+    top: 2604px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+
+.frame22 {
+    font-family: 'Inter' ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    position: absolute;
+    width: 400px;
+    height: 71px;
+    left: 344px;
+    top: 2652px;
+    background: #2D72CD;
+    border: none;
+    color: white;
+    border-radius: 3px;
+}
+
+.frame22:hover {
+    box-shadow: 0 0 12px white;
+    -moz-box-shadow: 0 0 12px #fff;
+    -o-box-shadow: 0 0 12px #fff;
+    -ms-box-shadow: 0 0 12px #fff;
+    -webkit-box-shadow: 0 0 12px #fff    ;
+}
+
+.findoutthecost {
+    width: 142px;
+    height: 19px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: #FFFFFF;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.idk2 {
+    position: absolute;
+    width: 400px;
+    height: 50px;
+    left: 344px;
+    top: 2746px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+
+
+.text30 {
+    position: absolute;
+    width: 850px;
+    height: 52px;
+    left: 344px;
+    top: 3007px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 52px;
+    color: #213252;
+}
+
+.text31 {
+    position: absolute;
+    width: 867px;
+    height: 36px;
+    left: 344px;
+    top: 3083px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: #213252;
+}
+
+.Rectangle10 {
+    position: absolute;
+    width: 712px;
+    height: 580px;
+    left: 864px;
+    top: 3180px;
+}
+
+
+
+.Rectangle14 {
+    position: absolute;
+    width: 712px;
+    height: 89px;
+    left: 864px;
+    top: 3671px;
+
+    background: #211D1D;}
+
+.text32 {
+    position: absolute;
+    width: 512px;
+    height: 56px;
+    left: 913px;
+    top: 3688px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+
+.box1 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 192px;
+    height: 127px;
+    left: 344px;
+    top: 3180px;
+    background: url(/img/SVG/Rectangle\ 9.svg);
+    border: 1px solid #E1E3EF;
+    border-radius: 4px;
+}
+
+.textbox1 {
+    position: absolute;
+    width: 182px;
+    height: 56px;
+    left: 575px;
+    top: 3208px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: #213252;
+}
+
+.textbox1a {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: #213252;
+
+}
+
+.box2 {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 192px;
+    height: 127px;
+    left: 344px;
+    top: 3331px;
+
+    background: url(/img/SVG/Rectangle\ 11.svg);
+    border: 1px solid #E1E3EF;
+    border-radius: 4px;
+}
+
+.textbox2 {
+    position: absolute;
+    width: 153px;
+    height: 56px;
+    left: 575px;
+    top: 3359px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: #213252;
+}
+.textbox2a {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: #213252;
+}
+
+.box3 {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 192px;
+    height: 127px;
+    left: 344px;
+    top: 3482px;
+
+    background: url(/img/SVG/Rectangle\ 12.svg);
+    border: 1px solid #E1E3EF;
+    border-radius: 4px;
+}
+
+.textbox3 {
+    position: absolute;
+    width: 154px;
+    height: 56px;
+    left: 575px;
+    top: 3510px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: #213252;
+}
+
+.textbox3a {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: #213252;
+}
+
+
+.box4 {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 192px;
+    height: 127px;
+    left: 344px;
+    top: 3633px;
+
+    background: url(/img/SVG/Rectangle\ 13.svg);
+    border: 1px solid #E1E3EF;
+    border-radius: 4px;
+}
+
+.textbox4 { 
+    position: absolute;
+    width: 174px;
+    height: 56px;
+    left: 575px;
+    top: 3661px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: #213252;
+}
+
+.textbox4a {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: #213252;
+
+}
+
+.backgroundcontainer {
+    position: absolute;
+    width: 1232px;
+    height: 265px;
+    left: 344px;
+    top: 3939px;
+    background: linear-gradient(0deg, rgba(26, 44, 65, 0.79), rgba(26, 44, 65, 0.79)), url(/img/SVG/image\ 20.svg);
+    border-radius: 16px;
+}
+
+.textbgcontainer {
+    
+
+    position: absolute;
+    width: 833px;
+    height: 156px;
+    left: 577px;
+    top: 3994px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 52px;
+    /* or 130% */
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.opentext {
+    position: absolute;
+    width: 497px;
+    height: 64px;
+    left: 344px;
+    top: 4377px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 32px;
+    color: #213252;
+}
+
+.opentext1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 32px;
+    color: #213252;
+
+}
+
+.opentext2 {
+    position: absolute;
+    width: 497px;
+    height: 166px;
+    left: 344px;
+    top: 4476px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #213252;
+}
+
+.mapbad1 {
+    position: absolute;
+    width: 40.97px;
+    height: 40.97px;
+    left: 1243.58px;
+    top: 4354.61px;
+    transform: rotate(45deg);
+}
+
+.mapbad2 {
+    position: absolute;
+    width: 324px;
+    height: 168.35px;
+    left: 960px;
+    top: 4358px;
+}
+
+.mapgood2 {
+    position: absolute;
+    width: 424.22px;
+    height: 220.43px;
+    left: 1134px;
+    top: 4508px;
+
+}
+
+.mapgood1 {
+    position: absolute;
+    width: 41px;
+    height: 41px;
+    left: 1488px;
+    top: 4520px;
+
+}
+
+.bluemap {
+    position: absolute;
+    width: 612px;
+    height: 318px;
+    left: 348px;
+    top: 4747px;
+}
+
+.bluemaptext {
+    position: absolute;
+    width: 333px;
+    height: 64px;
+    left: 1077px;
+    top: 4790px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 32px;
+    color: #213252;
+}
+
+.bluemaptext1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 32px;
+    color: #213252;
+}
+
+.bluemaptext2 {
+    position: absolute;
+    width: 504px;
+    height: 120px;
+    left: 1077px;
+    top: 4888px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #213252;
+}
+
+.image23 {
+    position: absolute;
+    width: 553px;
+    height: 390px;
+    left: 993px;
+    top: 5122px;
+}
+
+.image23text {
+    position: absolute;
+    width: 447px;
+    height: 96px;
+    left: 344px;
+    top: 5208px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 32px;
+    color: #213252;
+}
+
+.image23text1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 32px;
+    color: #213252;
+}
+
+.image23text2 {
+    position: absolute;
+    width: 508px;
+    height: 96px;
+    left: 344px;
+    top: 5328px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #213252;
+}
+
+.body5container {
+    position: absolute;
+    width: 1920px;
+    height: 763px;
+    left: 0px;
+    top: 5593px;
+
+    background: #F6F6F6;
+}
+
+.text51 {
+    
+
+
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    left: 344px;
+    top: 5681px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 50px;
+
+    color: #213252;
+}
+
+.text52 {
+   
+
+
+    position: absolute;
+    width: 349px;
+    height: 112px;
+    left: 344px;
+    top: 5919px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+ 
+
+
+    color: #213252;
+}
+
+.image24 {
+    position: absolute;
+    width: 663px;
+    height: 763px;
+    left: 561px;
+    top: 5593px;
+
+}
+
+.frame31 {
+    position: absolute;
+    width: 504px;
+    height: 177px;
+    left: 448px;
+    top: 6114px;
+}
+
+.text53 {
+    position: absolute;
+    width: 449px;
+    height: 112px;
+    left: 29px;
+    top: 33px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #213252;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.text54 {
+    position: absolute;
+    width: 449px;
+    height: 112px;
+    left: 29px;
+    top: 33px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    /* or 175% */
+
+
+    color: #213252;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.frame30 {
+    position: absolute;
+    width: 326px;
+    height: 588px;
+    left: 1176px;
+    top: 5695px;
+}
+
+.text55 {
+    
+
+
+    position: absolute;
+    width: 291px;
+    height: 46px;
+    left: 0px;
+    top: 0px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 18px;
+
+
+
+    color: #213252;
+}
+
+.text56 {
+    position: absolute;
+    width: 184px;
+    height: 28px;
+    left: 0px;
+    top: 70px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+
+
+    color: #213252;
+
+}
+
+.frame24 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    position: absolute;
+    width: 292px;
+    height: 37px;
+    left: 0px;
+    top: 100px;
+
+    background: #FFFFFF;
+    border: 1px solid #CDD6DB;
+    border-radius: 4px;
+
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+
+
+    color: #65677C;
+
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.text57 {
+    width: 77px;
+    height: 28px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+
+
+    color: #65677C;
+
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.text58 {
+    position: absolute;
+    width: 136px;
+    height: 28px;
+    left: 0px;
+    top: 172px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    /* identical to box height, or 175% */
+
+
+    color: #213252;
+}
+
+.frmae26 {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    position: absolute;
+    width: 310px;
+    height: 57px;
+    left: 0px;
+    top: 202px;
+    background: #FFFFFF;
+    border: 1px solid #CDD6DB;
+    border-radius: 4px;
+}
+
+.text58 {
+   
+    position: absolute;
+    width: 261px;
+    height: 29px;
+    left: 0px;
+    top: 274px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #213252;
+}
+
+.text59 {
+    position: absolute;
+    width: 279px;
+    height: 32px;
+    left: 28px;
+    top: 385px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #213252;
+}
+
+.text511 {
+    
+
+
+    position: absolute;
+    width: 326px;
+    height: 16px;
+    left: 0px;
+    top: 431px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height, or 114% */
+
+
+    color: #213252;
+}
+
+.text512 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height, or 114% */
+
+
+    color: #213252;
+}
+
+.text513 {
+
+    position: absolute;
+    width: 312px;
+    height: 48px;
+    left: 0px;
+    top: 540px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #5F6369;
+}
+
+.text514 {
+    color: #2D72CD;
+}
+
+.whitebox3 {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    position: absolute;
+    width: 310px;
+    height: 57px;
+    left: 0px;
+    top: 202px;
+    background: #FFFFFF;
+    border: 1px solid #CDD6DB;
+    border-radius: 4px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #65677C;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+
+.whitebox4 {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    position: absolute;
+    width: 312px;
+    height: 57px;
+    left: 0px;
+    top: 304px;
+    background: #FFFFFF;
+    border: 1px solid #CDD6DB;
+    border-radius: 4px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #65677C;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+
+.skrepka {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 0px;
+    top: 385px;
+}
+
+.frame27 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    position: absolute;
+    width: 290px;
+    height: 41px;
+    left: 0px;
+    top: 465px;
+    background: #2D72CD;
+    border: none;
+    border-radius: 3px;
+}
+
+.frame27:hover {
+    box-shadow: 0 0 12px rgb(27, 11, 114);
+    -moz-box-shadow: 0 0 12px rgb(27, 11, 114);
+    -o-box-shadow: 0 0 12px rgb(27, 11, 114);
+    -ms-box-shadow: 0 0 12px rgb(27, 11, 114);
+    -webkit-box-shadow: 0 0 12px rgb(27, 11, 114);
+
+}
+
+.text555 {
+    width: 142px;
+    height: 19px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.text556{
+    position: absolute;
+    width: 136px;
+    height: 28px;
+    left: 0px;
+    top: 172px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #213252;
+}
+
+.text61 {
+    
+
+
+    position: absolute;
+    width: 760px;
+    height: 52px;
+    left: 350px;
+    top: 6481px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 52px;
+    /* identical to box height, or 130% */
+
+    text-align: center;
+
+    color: #213252;
+}
+
+.text62 {
+    
+
+
+        position: absolute;
+        width: 438px;
+        height: 32px;
+        left: 350px;
+        top: 6649px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 32px;
+        /* identical to box height, or 145% */
+
+
+        color: #213252;
+}
+
+.text63 {
+
+
+    position: absolute;
+    width: 453px;
+    height: 90px;
+    left: 350px;
+    top: 6708px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    /* or 167% */
+    
+    
+    color: #213252;
+
+}
+
+.img38 {
+    position: absolute;
+    width: 504px;
+    height: 222px;
+    left: 963px;
+    top: 6619px;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)),
+    }
+
+.icon1 {
+    position: absolute;
+    top: 6678px;
+    left: 1170.44px;
+}    
+
+.text64 {
+    
+
+
+    position: absolute;
+    width: 329px;
+    height: 32px;
+    left: 344px;
+    top: 7036px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 32px;
+    /* identical to box height, or 145% */
+
+
+    color: #213252;
+}
+
+.text65 {
+    
+
+
+    position: absolute;
+    width: 432px;
+    height: 90px;
+    left: 344px;
+    top: 7102px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    /* or 167% */
+
+
+    color: #213252;
+}
+
+.line38 {
+ 
+
+    position: absolute;
+    width: 1920px;
+    height: 0px;
+    /* left: 1920px; */
+    top: 6925px;
+    border: 1px solid #AEB6BB;
+    
+    }
+
+.frame56 {
+    position: absolute;
+    width: 1920px;
+    height: 1013px;
+    left: 0px;
+    top: 6356px;
+
+    opacity: 0.1;
+}
+
+.image29 {
+    position: absolute;
+    left: 968px;
+    right: 863.63px;
+    top: 689px;
+    bottom: 276.99px;
+    /* background: #035491; */
+}
+
+.textf56 {
+   
+
+
+    position: absolute;
+    width: 113px;
+    height: 46px;
+    left: 1071.42px;
+    top: 7046.88px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30.0847px;
+    line-height: 45px;
+
+
+    color: #035491;
+}
+
+.img34 {
+    position: absolute;
+    width: 218.58px;
+    height: 79.91px;
+    left: 971.53px;
+    top: 7133px;
+
+    background: url(/img/SVG/image\ 34.svg);
+}
+
+.img35 {
+    position: absolute;
+    width: 182.15px;
+    height: 76.39px;
+    left: 1299.4px;
+    top: 7130px;
+
+    background: url(/img/SVG/image\ 35.svg);
+} 
+
+.img30 {
+   
+
+    position: absolute;
+    width: 210.36px;
+    height: 45.83px;
+    left: 1285.3px;
+    top: 7045px;
+
+    background: url(/img/SVG/image\ 30.svg);
+}
+
+.body7 {
+    position: absolute;
+    width: 1920px;
+    height: 763px;
+    left: 0px;
+    top: 7369px;
+    background: #F6F6F6;
+}
+
+.text71 {
+
+
+   position: absolute;
+width: 910px;
+height: 104px;
+left: 344px;
+top: 77px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 52px;
+/* or 162% */
+
+
+color: #213252;
+}
+
+.text72 {
+   
+
+
+    position: absolute;
+    width: 553px;
+    height: 36px;
+    left: 344px;
+    top: 204px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 36px;
+    /* identical to box height, or 180% */
+
+
+    color: #213252;
+}
+
+.Rectangle30 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 299px;
+    height: 414px;
+    left: 344px;
+    top: 292px;
+    background: url(/img/SVG/Rectangle\ 301.svg);
+    border: 1px solid #B1C0C9;
+}
+
+.Rectangle311 {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 298px;
+    height: 414px;
+    left: 655px;
+    top: 292px;
+    border: 1px solid #B1C0C9;
+}
+
+.Rectangle32 {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 299px;
+    height: 414px;
+    left: 965px;
+    top: 292px;
+
+    background: url(/img/SVG/Rectangle\ 32.svg);
+    border: 1px solid #B1C0C9;
+}
+
+.Rectangle51 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 298px;
+    height: 414px;
+    left: 1283px;
+    top: 292px;
+    border: 1px solid #B1C0C9;
+}
+
+.gendirector {
+    position: absolute;
+    width: 1280px;
+    height: 863px;
+    left: -26px;
+    top: 8185px;
+
+    background: linear-gradient(94.14deg, #FFFFFF 2.47%, rgba(255, 255, 255, 0.92) 20.13%, rgba(255, 255, 255, 0) 37.85%), linear-gradient(263.24deg, #FFFFFF 19.57%, rgba(255, 255, 255, 0) 39.23%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 16.92%), 
+}
+
+.text81 {
+    position: absolute;
+    width: 575px;
+    height: 126px;
+    left: 968px;
+    top: 8357px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 32px;
+    color: #213252;
+}
+
+.text82 {
+    
+    position: absolute;
+    width: 613px;
+    height: 72px;
+    left: 968px;
+    top: 8510px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #213252;
+}
+
+.text83 {
+    position: absolute;
+    width: 613px;
+    height: 96px;
+    left: 968px;
+    top: 8605px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #213252;
+}
+
+.text84 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1C5AAC;
+}
+
+.frame23 {
+    position: absolute;
+    width: 712px;
+    height: 245px;
+    left: 864px;
+    top: 8756px;
+
+}
+
+.rectangle33 {
+    position: absolute;
+    width: 712px;
+    height: 245px;
+    background: #1A2C41;
+    border-radius: 4px;
+}
+
+.text891 {
+    left: 100px;
+    width: 122px;
+    height: 19px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.frame32phone {
+    width: 198px;
+    height: 28px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #65677C;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+
+.text85 {
+    position: absolute;
+    width: 504px;
+    height: 96px;
+    left: 104px;
+    top: 28px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px; 
+    color: #FFFFFF;
+}
+
+.text86 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.rect34 {
+    position: absolute;
+    width: 400px;
+    height: 82px;
+    left: 344px;
+    top: 8927px;
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+.text87 {
+    position: absolute;
+    width: 367px;
+    height: 40px;
+    left: 358px;
+    top: 8948px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;      
+    color: #213252;
+}
+
+.text88 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #213252;
+}
+
+.frame32white {
+   /* Frame 26 */
+
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    position: absolute;
+    width: 504px;
+    height: 57px;
+    left: 970px;
+    top: 8904px;
+
+    background: #FFFFFF;
+    border: 1px solid #CDD6DB;
+    border-radius: 4px;
+}
+
+.frame37 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 194px;
+    height: 57px;
+    left: 1280px;
+    top: 8904px;
+
+    background: #2D72CD;
+    border-radius: 0px 4px 4px 0px;
+    border: none;
+    }
+
+.frame37:hover {
+    box-shadow: 0 0 12px rgb(255, 255, 255);
+    -moz-box-shadow: 0 0 12px rgb(255, 255, 255);
+    -o-box-shadow: 0 0 12px r(255, 255, 255);
+    -ms-box-shadow: 0 0 12px rgb(255, 255, 255);
+    -webkit-box-shadow: 0 0 12px rgb(255, 255, 255);
+}
+
+
+.footer {
+    position: absolute;
+    width: 1920px;
+    height: 281px;
+    left: 0px;
+    top: 9048px;
+    background: #121415;
+}
+
+.footertext1 {
+    position: absolute;
+    width: 197px;
+    height: 24px;
+    left: 343px;
+    top: 65px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 24px;
+    color: #B9C1D1;
+}
+
+.footertext2 {
+    position: absolute;
+    width: 217px;
+    height: 44px;
+    left: 551px;
+    top: 54px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.footertext3 {
+    position: absolute;
+    width: 265px;
+    height: 20px;
+    left: 347px;
+    top: 215px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #B0B8C1;
+}
+
+.footertext4 {
+    position: absolute;
+    width: 245px;
+    height: 20px;
+    left: 760px;
+    top: 215px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #B0B8C1;
+}
+
+.footertext5 {
+
+    position: absolute;
+    width: 155px;
+    height: 20px;
+    left: 1260px;
+    top: 215px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #B0B8C1;
+}
+
+.footerimg1 {
+    position: absolute;
+    width: 150px;
+    height: 47px;
+    left: 1427px;
+    top: 201px;
+}
+
+.footernubmerphone {    
+    position: absolute;
+    width: 235px;
+    height: 21px;
+    left: 1342px;
+    top: 63px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.callingus {
+    position: absolute;
+    width: 210px;
+    height: 19px;
+    left: 1362px;
+    top: 93px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #5284F7;
+}
+
+.line5 {
+    position: absolute;
+    width: 208px;
+    height: 0px;
+    left: 1364px;
+    top: 113px;
+    border: 1px dashed #5284F7;
+}
+
+.Devicemobile {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 1338px;
+    top: 94px;
+}
+
+.Telegram {
+    position: absolute;
+    width: 71px;
+    height: 20px;
+    left: 864px;
+    top: 126px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #B0B8C1;
+}
+
+.WhatsApp {
+    position: absolute;
+    width: 78px;
+    height: 20px;
+    left: 960px;
+    top: 126px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #B0B8C1;
+}
+
+.Viber {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    left: 1083px;
+    top: 126px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #B0B8C1;
+}
+
+.Skype {
+    position: absolute;
+    width: 47px;
+    height: 20px;
+    left: 1183px;
+    top: 126px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #B0B8C1;
+}
+
+.Ellipse17 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 875px;
+    top: 63px;
+    background: #FFFFFF;
+    border-radius: 100%;
+}
+
+.telegram {
+    position: absolute;
+    width: 30px;
+    height: 29px;
+    left: 885px;
+    top: 74px;
+}
+
+.Ellipse19 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 974px;
+    top: 63px;
+    border-radius: 100%;
+    background: #FFFFFF;
+}
+.whatsapp {
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    left: 984px;
+    top: 74px;
+}
+
+.Ellipse18 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 1079px;
+    top: 63px;
+    border-radius: 100%;
+    background: #FFFFFF;
+}
+
+.viber {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 1089px;
+    top: 73px;
+
+}
+
+.Ellipse20 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 1182px;
+    top: 63px;
+    border-radius: 100%;
+    background: #FFFFFF;
+}
+
+.skype {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 1192px;
+    top: 73px;
+    /* background: #FFFFFF; */
+}
